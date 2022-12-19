@@ -1,17 +1,22 @@
-# Flaschen-Taschen Node Client
+# Flaschen-Taschen Node
 
 This library includes a number of helper functions that assist in the construction and broadcast of image files in [PPM format](https://netpbm.sourceforge.net/doc/ppm.html) to [Flaschen-Taschen](https://github.com/hzeller/flaschen-taschen) servers.
 
 This library is a **work in progress**, and right now contains the very basic feature of creating a static image in `Buffer` and sending to an [FT server](https://github.com/hzeller/flaschen-taschen/blob/master/doc/protocols.md).
 
-This library is loosely based on [flashenode](https://github.com/mpmckenna8/flashenode). It is written in Typescript.
+This library is written in Typescript and is loosely based on [flashenode](https://github.com/mpmckenna8/flashenode).
 
 # Usage
 
-Import the library and instantiate the class with a string parameter containing the target server IP or host.
+```bash
+# Install the npm package from this github repo
+npm i https://github.com/telekineticyeti/flaschen-taschen-node
+```
+
+Import the library then initiate the class with a string parameter containing the target FT server IP or hostname.
 
 ```ts
-import {FlaschenTaschenClient} from './flaschen-taschen.client.class';
+import {FlaschenTaschenClient} from 'flaschen-taschen-node';
 
 const FTC = new FlaschenTaschenClient(
   'SERVER_IP_OR_HOSTNAME', // Your FT server address

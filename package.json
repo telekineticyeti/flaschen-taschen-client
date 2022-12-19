@@ -1,7 +1,7 @@
 {
-  "name": "flaschen-taschen-node-client",
-  "version": "0.0.1",
-  "description": "A simple to use client for transmitting ppm images over UDP to taschen-flaschen RGB matrix servers",
+  "name": "flaschen-taschen-node",
+  "version": "0.0.2",
+  "description": "A simple to use library for constructing PPM images and transmitting images over UDP to Flaschen Taschen RGB matrix servers",
   "type": "module",
   "repository": "https://github.com/telekineticyeti/flaschen-taschen-client",
   "main": "./dist/index.mjs",
