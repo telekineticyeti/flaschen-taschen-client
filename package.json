@@ -1,0 +1,42 @@
+{
+  "name": "flaschen-taschen-node-client",
+  "version": "0.0.1",
+  "description": "A simple to use client for transmitting ppm images over UDP to taschen-flaschen RGB matrix servers",
+  "type": "module",
+  "repository": "https://github.com/telekineticyeti/flaschen-taschen-client",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "unbuild",
+    "build:dev": "unbuild --stub",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.11.17",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4",
+    "unbuild": "^1.0.1"
+  }
+}
