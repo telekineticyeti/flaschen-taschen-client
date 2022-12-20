@@ -60,6 +60,7 @@ export class FlaschenTaschenClient {
 class FlaschenTaschenImage {
   private header: string;
   private width: number;
+  private height: number;
   private readonly ppmFileType = 'P6';
   public buffer: Buffer;
 
@@ -77,8 +78,8 @@ class FlaschenTaschenImage {
     // PPM footer packet string
     const footer = ``;
 
-    // this.header = header;
     this.width = options.width!;
+    this.height = options.height!;
 
     this.buffer = Buffer.alloc(this.header.length + footer.length + options.height! * options.width! * 3);
 
@@ -113,6 +114,17 @@ class FlaschenTaschenImage {
       }
       console.log('file written');
     });
+  }
+
+  /**
+   * Wipes the current image by setting every pixel to black.
+   */
+  public clear() {
+    for (let x = 0; x < this.width; x++) {
+      for (let y = 0; y < this.height; y++) {
+        this.plot(x, y, {r: 0, g: 0, b: 0});
+      }
+    }
   }
 }
 
