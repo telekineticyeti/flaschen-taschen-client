@@ -20,6 +20,8 @@ export class FlaschenTaschenClient {
     offsetX: 0,
     offsetY: 0,
   };
+  // Suppress debug messages
+  public silent = true;
 
   constructor(private host: string, port?: number) {
     if (port) this.port = port;
@@ -45,7 +47,9 @@ export class FlaschenTaschenClient {
     client.send(ftImage.buffer, this.port, this.host, (error, bytes) => {
       if (error) throw error;
 
-      console.log(`UDP message sent to ${this.host}:${this.port} (${bytes} bytes)`);
+      if (!this.silent) {
+        console.log(`UDP message sent to ${this.host}:${this.port} (${bytes} bytes)`);
+      }
       client.close();
     });
   }
@@ -112,7 +116,6 @@ class FlaschenTaschenImage {
       if (error) {
         throw new Error(error as any);
       }
-      console.log('file written');
     });
   }
 
