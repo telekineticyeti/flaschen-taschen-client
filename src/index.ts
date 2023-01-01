@@ -61,7 +61,7 @@ export class FlaschenTaschenClient {
  * Use the `plot()` method to draw pixels to the image, or the write method
  * to output the buffer to a file in ppm format.
  */
-class FlaschenTaschenImage {
+export class FlaschenTaschenImage {
   private header: string;
   private width: number;
   private height: number;
@@ -134,7 +134,7 @@ class FlaschenTaschenImage {
 /**
  * PPM Image options
  */
-interface ImageOptions {
+export interface ImageOptions {
   // Canvas height
   height?: number;
   // Canvas width
@@ -147,7 +147,7 @@ interface ImageOptions {
   offsetY?: number;
 }
 
-interface RGBValue {
+export interface RGBValue {
   r: number;
   g: number;
   b: number;
